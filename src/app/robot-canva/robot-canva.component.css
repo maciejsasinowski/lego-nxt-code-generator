@@ -1,0 +1,6 @@
+.ssCanvas{
+    width:100%;
+    min-height:500px;
+    background:#eee;
+    border: 1px solid black;
+}

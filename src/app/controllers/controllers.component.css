@@ -1,0 +1,32 @@
+.flex-container{
+    min-height:160px;
+    max-width:240px;
+    position: relative;
+    margin : 30px;
+}
+
+.fwd{
+    top:0px;
+    right:calc(50% - 50px);    
+}
+.rev{
+    bottom:0px;
+    right:calc(50% - 50px);
+}
+.left{
+    top:calc(50% - 17px);
+    left:0px;
+}
+
+.right{
+    top:calc(50% - 17px);
+    right:0px;
+}
+
+
+
+button{
+    min-width:100px;
+    font-weight: bold;
+    position: absolute;
+}
