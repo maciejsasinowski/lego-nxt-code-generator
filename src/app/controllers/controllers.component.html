@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col-md-6 flex-container">
-      <button type="button" class="btn btn-primary fwd" (click)="move('f')">FWD</button>
-      <button type="button" class="btn btn-primary left" (click)="move('l')">LEFT</button>
-      <button type="button" class="btn btn-primary right" (click)="move('r')">RIGHT</button>
-      <button type="button" class="btn btn-primary rev" (click)="move('b')">REV</button>
+      <button type="button" class="btn btn-primary fwd" (click)="move('FWD')">FWD</button>
+      <button type="button" class="btn btn-primary left" (click)="move('LEFT')">LEFT</button>
+      <button type="button" class="btn btn-primary right" (click)="move('RIGHT')">RIGHT</button>
+      <button type="button" class="btn btn-primary rev" (click)="move('REV')">REV</button>
   </div>
 
   <div class="col-md-6 flex-container pull-right">
       <button type="button" class="btn btn-primary fwd">CLEAR</button>
-      <button type="button" class="btn btn-primary rev">GENERATE</button>
+      <button type="button" class="btn btn-primary rev" (click)="generateCode()">GENERATE</button>
   </div>
 
 </div>

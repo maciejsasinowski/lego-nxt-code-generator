@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RobotCanvaComponent } from './robot-canva/robot-canva.component';
@@ -19,7 +20,8 @@ import { CanvaServiceService } from './services/canva-service.service';
     ControllersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [CanvaServiceService],
   bootstrap: [AppComponent]
