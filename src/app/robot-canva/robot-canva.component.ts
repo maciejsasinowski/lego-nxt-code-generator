@@ -47,7 +47,6 @@ export class RobotCanvaComponent implements OnDestroy {
     this.subscription = this.canvaService.observableCanva().subscribe(data => {
       this.positionHelper=data.position;
       this.animateMove();
-      alert(data);
       console.log('canva component',data);    
      });
   }

@@ -29,6 +29,7 @@ export class ControllersComponent {
     this.canvaService.sendRequest(cGL.generateOutputCode()).
         subscribe((data)=>{
           console.log(data.json().code);
+          alert(data.json().code);
         });
   }
 
