@@ -56,11 +56,18 @@ export class CodeGenerationLogic {
             if(rightMoveNumber<leftMoveNumber){
                 this.codeArray.push(`//making right ${rightMoveNumber} turn`);
                 this.makeTurn(this.lEngine ,rightMoveNumber);
-            }else {
+                this.generateMove(o.moveNum);
+                debugger;
+            }else if(this.initialRobotDir!=o.previousDirection) {
                 this.codeArray.push(`//making left ${leftMoveNumber} turn`);                
                 this.makeTurn(this.rEngine,leftMoveNumber);
+                this.generateMove(o.moveNum);
+                debugger;
+            }else{
+                this.generateMove(o.moveNum);
+                debugger;
             }
-            this.generateMove(o.moveNum);
+            
         });
         this.codeArray.push('}');
         return this.codeArray.join('\n');

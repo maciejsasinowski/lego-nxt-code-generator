@@ -8,6 +8,9 @@ import { HistoryComponentComponent } from './history-component/history-component
 import { SettingsComponent } from './settings/settings.component';
 import { ControllersComponent } from './controllers/controllers.component';
 
+import {SelectModule} from 'angular2-select';
+import { FormsModule } from '@angular/forms';
+
 import { CanvaServiceService } from './services/canva-service.service';
 
 
@@ -21,7 +24,9 @@ import { CanvaServiceService } from './services/canva-service.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    SelectModule,
+    FormsModule
   ],
   providers: [CanvaServiceService],
   bootstrap: [AppComponent]

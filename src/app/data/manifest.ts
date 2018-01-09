@@ -3,7 +3,7 @@ export const turnTime='360';
 export const straightTime='500';
 
 export const SETTINGS={
-    spriteSRC:'assets/robot-silhouette-image-3.png',
+    spriteSRC:'assets/small-robot-with-arms-and-legs.svg',
     animateStep:1,
     onCanvaStep:10,
     engineOutput:[

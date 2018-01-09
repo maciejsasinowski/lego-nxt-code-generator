@@ -39,15 +39,14 @@ export class RobotCanvaComponent implements OnDestroy {
     this.sourceImg.src = SETTINGS.spriteSRC; 
     this.sourceImg.onload = ()=>
     {
-         this.canvaObject.context.drawImage(this.sourceImg, 0, 0,25,25);
+         this.canvaObject.context.drawImage(this.sourceImg, 125, 65,25,25);
     }
   }
 
   private handleMoveOnCanva(){
     this.subscription = this.canvaService.observableCanva().subscribe(data => {
       this.positionHelper=data.position;
-      this.animateMove();
-      console.log('canva component',data);    
+      this.animateMove();   
      });
   }
 

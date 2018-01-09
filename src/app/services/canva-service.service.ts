@@ -14,14 +14,20 @@ export class CanvaServiceService {
   private canvaObservable;
   private canvaPosObj:CanvaPos;
   private moveList:string[];
+
+  private settings={
+    lEngine:'',
+    rEngine:'',
+    dir:'',
+  };
   
       constructor( private http: Http){
         this.canvaObservable= new Subject<any>(); 
         this.canvaPosObj={
           oldX:-1,
           oldY:-1,
-          currentX:0,
-          currentY:0,
+          currentX:125,
+          currentY:65,
           XPosChange:Move.NOCHANGE,
           YPosChange:Move.NOCHANGE
         };
@@ -80,6 +86,14 @@ export class CanvaServiceService {
 
       public getMoveList():string[]{
         return this.moveList;
+      }
+
+      public updateSettings(s){
+        this.settings=s;
+      }
+
+      public getSettings(){
+        return this.settings;
       }
 
       public sendRequest(code) {

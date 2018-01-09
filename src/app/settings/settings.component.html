@@ -1,3 +1,15 @@
-<p>
-  settings works!
-</p>
+
+<h5>Lewy silnik</h5>
+<select class="form-control" [(ngModel)]="leftEngine" (ngModelChange)="upDate()">
+  <option *ngFor="let l of lEngines" [ngValue]="l.data">{{l.name}}</option>
+</select>
+
+<h5>Prawy silnik</h5>
+<select class="form-control" [(ngModel)]="rightEngine" (ngModelChange)="upDate()">
+  <option *ngFor="let l of lEngines" [ngValue]="l.data">{{l.name}}</option>
+</select>
+
+<h5>Kierunek rozpoczęcia</h5>
+<select class="form-control" [(ngModel)]="direction" (ngModelChange)="upDate()">
+  <option *ngFor="let l of directions" [ngValue]="l.data">{{l.data}}</option>
+</select>

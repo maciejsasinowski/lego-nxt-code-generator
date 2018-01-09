@@ -22,9 +22,9 @@ export class ControllersComponent {
   }
 
   public generateCode(){
-    
-    let cGL = new CodeGenerationLogic(this.canvaService.getMoveList());
-    cGL.analyzeDirections('FWD');
+    let settings=this.canvaService.getSettings();
+    let cGL = new CodeGenerationLogic(this.canvaService.getMoveList(),settings.lEngine,settings.rEngine);
+    cGL.analyzeDirections(settings.dir);
     
     this.canvaService.sendRequest(cGL.generateOutputCode()).
         subscribe((data)=>{
