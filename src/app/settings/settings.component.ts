@@ -25,6 +25,10 @@ export class SettingsComponent implements OnInit {
   constructor(private canvaService: CanvaServiceService) { }
 
   ngOnInit() {
+    this.leftEngine='A';
+    this.rightEngine='B';
+    this.direction='REV';
+    this.upDate();
   }
 
   upDate(){

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CanvaServiceService } from '../services/canva-service.service';
 
 import {CodeGenerationLogic} from '../data/CodeGenerationLogic';
+import {SETTINGS} from '../data/manifest';
 
 
 @Component({
@@ -22,14 +23,18 @@ export class ControllersComponent {
   }
 
   public generateCode(){
+    
     let settings=this.canvaService.getSettings();
     let cGL = new CodeGenerationLogic(this.canvaService.getMoveList(),settings.lEngine,settings.rEngine);
+    console.log(cGL);
     cGL.analyzeDirections(settings.dir);
     
     this.canvaService.sendRequest(cGL.generateOutputCode()).
         subscribe((data)=>{
+          this.canvaService.resetMoves();
           console.log(data.json().code);
           alert(data.json().code);
+          this.canvaService.resetMoves();
         });
   }
 

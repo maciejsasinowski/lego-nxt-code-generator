@@ -95,6 +95,9 @@ export class CanvaServiceService {
       public getSettings(){
         return this.settings;
       }
+      public resetMoves(){
+        this.moveList=[];
+      }
 
       public sendRequest(code) {
         const formData: FormData = new FormData();

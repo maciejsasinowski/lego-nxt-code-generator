@@ -6,7 +6,7 @@ export class CodeGenerationLogic {
     private directions:string[];
     private lEngine:string;
     private rEngine:string;
-    private codeArray=SETTINGS.codeArrayTemplate;
+    public codeArray;
     private directionsAfterAnalyze;
     private initialRobotDir='';
     
@@ -16,6 +16,9 @@ export class CodeGenerationLogic {
         this.directions=directionsArray;
         this.lEngine=lEngine;
         this.rEngine=rEngine;
+        this.codeArray=[];
+        this.codeArray=SETTINGS.codeArrayTemplate;
+        console.log("XDDDDDD");
       }
 
       public analyzeDirections(robotDir:string){
@@ -57,15 +60,12 @@ export class CodeGenerationLogic {
                 this.codeArray.push(`//making right ${rightMoveNumber} turn`);
                 this.makeTurn(this.lEngine ,rightMoveNumber);
                 this.generateMove(o.moveNum);
-                debugger;
-            }else if(this.initialRobotDir!=o.previousDirection) {
+            }else if(this.initialRobotDir!=o.direction) {
                 this.codeArray.push(`//making left ${leftMoveNumber} turn`);                
                 this.makeTurn(this.rEngine,leftMoveNumber);
                 this.generateMove(o.moveNum);
-                debugger;
             }else{
                 this.generateMove(o.moveNum);
-                debugger;
             }
             
         });
